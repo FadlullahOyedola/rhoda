@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Rhoda. | Register & Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#13B6EC',
+                        'background-dark': '#0F172A',
+                        'surface-dark': '#1E293B',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .input-field {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            border-color: #13B6EC;
+            box-shadow: 0 0 0 2px rgba(19, 182, 236, 0.2);
+            outline: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-slate-100 font-sans min-h-screen flex flex-col justify-center items-center p-4">
+
+    <a href="index.html"
+        class="absolute top-8 left-8 flex items-center gap-2 text-slate-400 hover:text-primary transition-colors">
+        <span class="material-symbols-outlined">arrow_back</span>
+        <span>Back to Home</span>
+    </a>
+
+    <div class="w-full max-w-md">
+        <div class="text-center mb-8">
+            <div class="flex justify-center items-center gap-2 mb-2">
+                <span class="material-symbols-outlined text-primary text-4xl">groups</span>
+                <span class="text-3xl font-black text-white">Rhoda<span class="text-primary">.</span></span>
+            </div>
+            <p id="form-subtitle" class="text-slate-400">Create your account to start sharing.</p>
+        </div>
+
+        <div class="glass-card rounded-3xl p-8 shadow-2xl">
+
+            <form id="register-form" action="api/register" method="POST" class="space-y-5">
+                <h2 class="text-2xl font-bold text-white mb-6">Create Account</h2>
+
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Full
+                        Name</label>
+                    <input type="text" placeholder="John Doe" class="input-field w-full rounded-xl p-3 text-white">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Email
+                        Address</label>
+                    <input type="email" placeholder="name@example.com"
+                        class="input-field w-full rounded-xl p-3 text-white">
+                </div>
+
+                <div>
+                    <label
+                        class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Password</label>
+                    <input type="password" placeholder="••••••••" class="input-field w-full rounded-xl p-3 text-white">
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-4 rounded-xl transition-all transform hover:scale-[1.02]">
+                    Sign Up
+                </button>
+
+                <div class="relative py-4">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-white/5"></div>
+                    </div>
+                    <div class="relative flex justify-center text-xs uppercase"><span
+                            class="bg-surface-dark px-2 text-slate-500">Or continue with</span></div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <button type="button"
+                        class="input-field flex items-center justify-center py-3 rounded-xl hover:bg-white/5">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google">
+                    </button>
+                    <button type="button"
+                        class="input-field flex items-center justify-center py-3 rounded-xl hover:bg-white/5">
+                        <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="w-5 h-5"
+                            alt="Facebook">
+                    </button>
+                </div>
+            </form>
+
+            <form id="login-form" action="api/login" method="POST" class="space-y-5 hidden">
+                <h2 class="text-2xl font-bold text-white mb-6">Welcome Back</h2>
+
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Email
+                        Address</label>
+                    <input type="email" placeholder="name@example.com"
+                        class="input-field w-full rounded-xl p-3 text-white">
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label
+                            class="block text-xs font-semibold uppercase tracking-wider text-slate-500">Password</label>
+                        <a href="#" class="text-xs text-primary hover:underline">Forgot?</a>
+                    </div>
+                    <input type="password" placeholder="••••••••" class="input-field w-full rounded-xl p-3 text-white">
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" class="w-4 h-4 rounded border-white/10 bg-background-dark">
+                    <label class="text-sm text-slate-400">Remember me</label>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-4 rounded-xl transition-all transform hover:scale-[1.02]">
+                    Sign In
+                </button>
+            </form>
+
+            <div class="mt-8 text-center">
+                <p id="switch-text" class="text-sm text-slate-400">
+                    Already have an account?
+                    <button id="toggle-form" class="text-primary font-bold hover:underline ml-1">Log In</button>
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 flex justify-center gap-6 text-xs text-slate-500">
+            <a href="terms.html" class="hover:text-white">Terms of Service</a>
+            <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+        </div>
+    </div>
+
+    <script>
+        const registerForm = document.getElementById('register-form');
+        const loginForm = document.getElementById('login-form');
+        const toggleBtn = document.getElementById('toggle-form');
+        const formSubtitle = document.getElementById('form-subtitle');
+        const switchText = document.getElementById('switch-text');
+
+        let isLogin = false;
+
+        toggleBtn.addEventListener('click', () => {
+            isLogin = !isLogin;
+
+            if (isLogin) {
+                // Switch to Login
+                registerForm.classList.add('hidden');
+                loginForm.classList.remove('hidden');
+                formSubtitle.textContent = 'Welcome back to the community.';
+                switchText.innerHTML = 'New to Rhoda? <button id="toggle-form" class="text-primary font-bold hover:underline ml-1">Create Account</button>';
+                toggleBtn.textContent = 'Create Account';
+            } else {
+                // Switch to Register
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+                formSubtitle.textContent = 'Create your account to start sharing.';
+                switchText.innerHTML = 'Already have an account? <button id="toggle-form" class="text-primary font-bold hover:underline ml-1">Log In</button>';
+            }
+
+            // Re-attach listener because innerHTML wipes it
+            document.getElementById('toggle-form').addEventListener('click', () => toggleBtn.click());
+        });
+    </script>
+</body>
+
+</html>

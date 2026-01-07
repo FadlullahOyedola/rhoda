@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Community | Rhoda.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#13B6EC',
+                        'background-dark': '#0F172A',
+                        'surface-dark': '#1E293B',
+                    },
+                    animation: {
+                        'slow-pan': 'pan 20s linear infinite',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        pan: {
+                            '0%': { transform: 'scale(1) translateX(0)' },
+                            '100%': { transform: 'scale(1.1) translateX(-20px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #13B6EC, #A855F7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #13B6EC;
+            border: 4px solid #0F172A;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-slate-100 font-sans selection:bg-primary/30">
+
+    <header class="glass-nav sticky top-0 z-50 border-b border-white/5 w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-3xl">groups</span>
+                    <a class="text-white text-xl font-bold" href="index.html">Rhoda<span
+                            class="text-primary">.</span></a>
+                </div>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
+                        href="index.html">Home</a>
+                    <a class="text-sm font-medium text-primary" href="about.html">About</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
+                        href="blog.html">Blog</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
+                        href="contact.html">Contact</a>
+                </nav>
+                <a href="register.html"
+                    class="bg-primary text-background-dark px-6 py-2 rounded-full text-sm font-bold hover:brightness-110 transition-all">Join
+                    Us</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071"
+            class="absolute inset-0 w-full h-full object-cover opacity-20 animate-slow-pan" alt="Teamwork">
+        <div class="absolute inset-0 bg-gradient-to-b from-background-dark/0 via-background-dark/50 to-background-dark">
+        </div>
+
+        <div class="relative z-10 max-w-4xl px-4 text-center animate-fade-in-up">
+            <h1 class="text-6xl md:text-8xl font-black text-white mb-6">More than just <br><span class="gradient-text">a
+                    Blog.</span></h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                We are a decentralized community of developers, designers, and futurists building the world's most
+                transparent knowledge base.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-24 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-bold text-white">Our Core Purpose</h2>
+                <p class="text-slate-400 text-lg leading-relaxed">
+                    In an era of AI-generated noise and clickbait, Rhoda was founded to restore the value of human
+                    experience. We believe that deep technical knowledge and creative wisdom should be accessible to
+                    everyone, without the barrier of intrusive ads or paywalls.
+                </p>
+                <div class="grid grid-cols-2 gap-6 pt-6">
+                    <div>
+                        <h4 class="text-white font-bold text-2xl">5M+</h4>
+                        <p class="text-slate-500 text-sm">Monthly Readers</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-2xl">120+</h4>
+                        <p class="text-slate-500 text-sm">Global Chapters</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-surface-dark p-2 rounded-[2.5rem] border border-white/5">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070"
+                    class="rounded-[2.2rem] shadow-2xl" alt="Mission">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">What We Stand For</h2>
+                <div class="h-1.5 w-24 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="p-10 rounded-3xl bg-surface-dark border border-white/5 hover:border-primary/20 transition-all">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-6">verified_user</span>
+                    <h3 class="text-xl font-bold text-white mb-4">Radical Integrity</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Every piece of content is peer-reviewed by our
+                        community council to ensure technical accuracy and ethical standards.</p>
+                </div>
+                <div
+                    class="p-10 rounded-3xl bg-surface-dark border border-white/5 hover:border-primary/20 transition-all">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-6">diversity_3</span>
+                    <h3 class="text-xl font-bold text-white mb-4">Inclusive Growth</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">We provide mentorship programs for junior writers
+                        to help them find their voice in the global tech scene.</p>
+                </div>
+                <div
+                    class="p-10 rounded-3xl bg-surface-dark border border-white/5 hover:border-primary/20 transition-all">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-6">auto_awesome</span>
+                    <h3 class="text-xl font-bold text-white mb-4">Pure Creativity</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Technology is just a tool. We celebrate the human
+                        spirit and the creative spark that drives innovation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-bold text-white text-center mb-20">The Evolution</h2>
+            <div class="relative border-l-2 border-white/10 ml-4 md:ml-0">
+
+                <div class="timeline-item relative pl-12 mb-16">
+                    <h3 class="text-2xl font-bold text-white">January 2024</h3>
+                    <p class="text-primary font-bold text-sm mb-2 uppercase">The Foundation</p>
+                    <p class="text-slate-400">Rhoda beta launched with just 50 writers. The goal was to build a platform
+                        that actually loaded in under 1 second worldwide.</p>
+                </div>
+
+                <div class="timeline-item relative pl-12 mb-16">
+                    <h3 class="text-2xl font-bold text-white">August 2024</h3>
+                    <p class="text-primary font-bold text-sm mb-2 uppercase">Global Expansion</p>
+                    <p class="text-slate-400">Opened our contributor program to everyone. We translated the platform
+                        into 12 languages to support local tech communities.</p>
+                </div>
+
+                <div class="timeline-item relative pl-12">
+                    <h3 class="text-2xl font-bold text-white">2026 & Beyond</h3>
+                    <p class="text-primary font-bold text-sm mb-2 uppercase">Decentralization</p>
+                    <p class="text-slate-400">Moving toward a community-owned model where the writers hold the keys to
+                        the platform's future governance.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4">
+        <div
+            class="max-w-5xl mx-auto bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-[3rem] p-12 md:p-20 text-center border border-white/10">
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Ready to share your voice?</h2>
+            <p class="text-slate-300 text-lg mb-10 max-w-xl mx-auto">Join the thousands of creators who call Rhoda home.
+                No fees, no gatekeepers, just pure knowledge sharing.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="register.html"
+                    class="bg-primary text-background-dark font-black px-10 py-4 rounded-full hover:scale-105 transition-all">Start
+                    Writing Today</a>
+                <a href="contact.html"
+                    class="bg-white/5 text-white font-bold px-10 py-4 rounded-full border border-white/10 hover:bg-white/10 transition-all">Contact
+                    Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="text-slate-500 text-sm">© 2026 Rhoda Community. All rights reserved. Built for the curious.</p>
+    </footer>
+
+    <script>
+        // Simple scroll reveal for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => observer.observe(section));
+    </script>
+</body>
+
+</html>
