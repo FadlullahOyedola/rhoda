@@ -404,4 +404,130 @@
               </a>
               <p class="mt-2 text-sm text-slate-300">Motion, depth, and readability—without overdoing it.</p>
               <a href="post-detail.html" class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-slate-200 hover:text-primary transition">
-                Read post 
+                Read post <i data-lucide="arrow-right" class="h-4 w-4"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </main>
+
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="reveal rounded-3xl bg-surface-dark/60 border border-white/10 p-6">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-lg font-extrabold text-white font-display">Join the newsletter</h3>
+              <p class="text-sm text-slate-300 mt-1">Zero spam. Just high-quality posts, twice a week.</p>
+            </div>
+            <div class="h-10 w-10 rounded-2xl bg-primary/15 border border-primary/20 flex items-center justify-center">
+              <i data-lucide="mail" class="h-5 w-5 text-primary"></i>
+            </div>
+          </div>
+
+          <form action="subscribe.php" method="POST" class="mt-4 space-y-3">
+            <input type="email" placeholder="email@example.com" required
+              class="w-full bg-background-dark/60 border border-white/10 rounded-2xl px-4 py-3 text-sm outline-none focus:border-primary transition">
+            <button class="w-full bg-primary text-background-dark font-extrabold py-3 rounded-2xl hover:brightness-110 transition shadow-glow">
+              Subscribe
+            </button>
+            <p class="text-[11px] text-slate-400">By subscribing you agree to receive emails. Unsubscribe anytime.</p>
+          </form>
+        </div>
+
+        <div class="reveal rounded-3xl bg-surface-dark/60 border border-white/10 p-6">
+          <h3 class="text-lg font-extrabold text-white font-display">Popular tags</h3>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="tag-tech.html" class="px-3 py-1.5 rounded-full bg-background-dark/60 border border-white/10 text-xs text-slate-200 hover:border-white/20 hover:text-primary transition">#JavaScript</a>
+            <a href="tag-lifestyle.html" class="px-3 py-1.5 rounded-full bg-background-dark/60 border border-white/10 text-xs text-slate-200 hover:border-white/20 hover:text-primary transition">#Mindfulness</a>
+            <a href="tag-ai.html" class="px-3 py-1.5 rounded-full bg-background-dark/60 border border-white/10 text-xs text-slate-200 hover:border-white/20 hover:text-primary transition">#AI</a>
+            <a href="tag-product.html" class="px-3 py-1.5 rounded-full bg-background-dark/60 border border-white/10 text-xs text-slate-200 hover:border-white/20 hover:text-primary transition">#Product</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#070B14] border-t border-white/10 pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+      <div class="md:col-span-2 reveal">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 border border-white/10">
+            <i data-lucide="users" class="h-5 w-5 text-primary"></i>
+          </span>
+          <span class="text-2xl font-extrabold text-white font-display">Rhoda.</span>
+        </div>
+        <p class="text-slate-300 max-w-md text-sm">
+          Building a bridge between knowledge and curiosity. Join thousands of contributors worldwide.
+        </p>
+      </div>
+
+      <div class="reveal">
+        <h4 class="text-white font-extrabold font-display mb-3">Quick links</h4>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li><a href="about.html" class="hover:text-primary transition">Our story</a></li>
+          <li><a href="blog.html" class="hover:text-primary transition">Latest posts</a></li>
+          <li><a href="contact.html" class="hover:text-primary transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <h4 class="text-white font-extrabold font-display mb-3">Legal</h4>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li><a href="privacy.html" class="hover:text-primary transition">Privacy policy</a></li>
+          <li><a href="terms.html" class="hover:text-primary transition">Terms of service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-white/5 text-center text-slate-500 text-sm">
+      &copy; 2026 Rhoda Community. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Icons
+    lucide.createIcons();
+
+    // Mobile menu toggle (animated)
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    let menuOpen = false;
+    menuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+
+      // swap icon
+      menuIcon.setAttribute('data-lucide', menuOpen ? 'x' : 'menu');
+      lucide.createIcons();
+    });
+
+    // Scroll progress bar (throttled with rAF)
+    const progress = document.getElementById("progress-bar");
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+          progress.style.width = scrolled + "%";
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Reveal on scroll (IntersectionObserver)
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) e.target.classList.add('is-in');
+      }
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
